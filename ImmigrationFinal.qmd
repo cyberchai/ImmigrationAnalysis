@@ -1,0 +1,65 @@
+---
+title: "Immigration-Analysis-Final"
+author: "Chaira Harder, Isabelle Elder, Sirohi Kumar"
+format: pdf
+editor: visual
+---
+
+# An Analysis of Education and Demographic Information on Successful US-Immigration
+
+```{r}
+
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(tidytuesdayR)
+
+```
+
+## INTRODUCTION
+
+## METHODS
+
+### Load the data:
+
+```{r}
+# NOTE: To load data, you must download both the extract's data and the DDI
+# and also set the working directory to the folder with these files (or change the path below).
+
+if (!require("ipumsr")) stop("Reading IPUMS data into R requires the ipumsr package. It can be installed using the following command: install.packages('ipumsr')")
+
+ddi <- read_ipums_ddi("highered_00001.xml")
+data <- read_ipums_micro(ddi)
+```
+
+### Data wrangling:
+
+
+
+```{r}
+
+```
+
+
+```{r}
+
+```
+
+
+## RESULTS
+
+### HYPOTHESIS
+
+
+## DISCUSSION
+
+
+### LIMITATIONS 
+
+
+
+### FUTURE DIRECTION
+
+
+
+## Data Appendix
