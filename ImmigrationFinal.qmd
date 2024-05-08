@@ -63,3 +63,8 @@ data <- read_ipums_micro(ddi)
 
 
 ## Data Appendix
+
+
+#### IPUMS Citation
+
+. Minnesota Population Center. IPUMS Higher Ed: Version 1.0 [ImmigrationData]. Minneapolis, MN: University of Minnesota, 2016. https://doi.org/10.18128/D100.V1.0
