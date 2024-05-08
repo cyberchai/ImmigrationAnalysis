@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ipums-ddi-xslt.xsl"?>
+<codeBook ID="ddi2-ff0c2bc0-eefe-013c-593e-0242ac1f0004-highered_00002.dat-highered.ipums.org" version="2.5" xmlns="ddi:codebook:2_5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="ddi:codebook:2_5 http://www.ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/codebook.xsd">
+  <docDscr>
+    <citation>
+      <titlStmt>
+        <titl>Codebook for an Higher Ed Data Extract</titl>
+        <subTitl>DDI 2.5 metadata describing the extract file  'highered_00002.dat'</subTitl>
+        <IDNo>ddi2-ff0c2bc0-eefe-013c-593e-0242ac1f0004-highered_00002.dat-highered.ipums.org</IDNo>
+      </titlStmt>
+      <rspStmt>
+        <AuthEnty affiliation="University of Minnesota">IPUMS</AuthEnty>
+      </rspStmt>
+      <prodStmt>
+        <producer abbr="IPUMS" affiliation="University of Minnesota" role="Documentation">IPUMS</producer>
+        <prodDate date="2024-05-08">May 8, 2024</prodDate>
+        <prodPlac>IPUMS, 50 Willey Hall, 225 - 19th Avenue South, Minneapolis, MN 55455</prodPlac>
+      </prodStmt>
+      <distStmt>
+        <contact URI="https://ipums.org" affiliation="University of Minnesota">IPUMS</contact>
+      </distStmt>
+    </citation>
+  </docDscr>
+  <stdyDscr>
+    <citation>
+      <titlStmt>
+        <titl>User Extract highered_00002.dat</titl>
+      </titlStmt>
+      <rspStmt>
+        <AuthEnty affiliation="University of Minnesota">IPUMS</AuthEnty>
+      </rspStmt>
+      <prodStmt>
+        <producer abbr="IPUMS" affiliation="University of Minnesota" role="Documentation">IPUMS</producer>
+        <prodDate date="2024-05-08">May 8, 2024</prodDate>
+        <prodPlac>IPUMS, 50 Willey Hall, 225 - 19th Avenue South, Minneapolis, MN 55455</prodPlac>
+      </prodStmt>
+      <distStmt>
+        <contact URI="https://ipums.org" affiliation="University of Minnesota">IPUMS</contact>
+      </distStmt>
+      <serStmt>
+        <serName abbr="highered">IPUMS Higher Ed</serName>
+        <serInfo>DOI:10.18128/D100.V1.0</serInfo>
+      </serStmt>
+      <verStmt>
+        <version date="2024-05-08"/>
+      </verStmt>
+    </citation>
+    <stdyInfo>
+      <subject>
+        <topcClas vocab="IPUMS">Technical Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Demographic Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Highest Degree Variables -- PERSON</topcClas>
+        <topcClas vocab="IPUMS">Employment Variables -- PERSON</topcClas>
+      </subject>
+      <sumDscr ID="sdatref-43">
+        <timePrd date="2013" event="single">2013</timePrd>
+        <nation abbr="us">United States</nation>
+      </sumDscr>
+      <sumDscr ID="sdatref-44">
+        <timePrd date="2013" event="single">2013</timePrd>
+        <nation abbr="us">United States</nation>
+      </sumDscr>
+      <notes><![CDATA[Additional notes on a sample that is part of this study:  Survey of Doctorate Recipients 2013, SESTAT
+]]></notes>
+      <notes><![CDATA[Additional notes on a sample that is part of this study:  National Survey of College Graduates 2013, SESTAT
+]]></notes>
+    </stdyInfo>
+    <dataAccs>
+      <useStmt>
+        <confDec required="no"><![CDATA[None]]></confDec>
+        <contact URI="http://highered.ipums.org" affiliation="IPUMS">Higher Ed</contact>
+        <citReq><![CDATA[Publications and research reports based on the Higher Ed database must cite it appropriately. The citation should include the following:
+
+. Minnesota Population Center. IPUMS Higher Ed: Version 1.0 [dataset]. Minneapolis, MN: University of Minnesota, 2016. https://doi.org/10.18128/D100.V1.0
+
+The licensing agreement for use of Higher Ed data requires that users supply us with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation. Please add your citation to the IPUMS bibliography: http://bibliography.ipums.org/]]></citReq>
+        <conditions><![CDATA[Users of Higher Ed data must agree to abide by the conditions of use. A user's license is valid for one year and may be renewed.  Users must agree to the following conditions:
+
+(1) No fees may be charged for use or distribution of the data.  All persons are granted a limited license to use these data, but you may not charge a fee for the data if you distribute it to others.
+
+(2) Cite IPUMS appropriately.  For information on proper citation, refer to the citation requirement section of this DDI document.
+
+(3) Tell us about any work you do using the IPUMS.  Publications, research reports, or presentations making use of Higher Ed should be added to our Bibliography. Continued funding for the IPUMS depends on our ability to show our sponsor agencies that researchers are using the data for productive purposes.
+
+(4) Use it for GOOD -- never for EVIL.]]></conditions>
+        <disclaimer>The user of the data acknowledges that the original collector of the data, the authorized distributor of the data, and the relevant funding agency bear no responsibility for use of the data or for interpretations or inferences based upon such uses.</disclaimer>
+      </useStmt>
+    </dataAccs>
+    <notes><![CDATA[User-provided description:  Revision of (race/ethnicity, gender, number of children, education:major, place of birth, US citizen status, type of US citizen, education:degree level, labour force status)]]></notes>
+    <notes>This extract is a revision of the user's previous extract, ID 4475418.</notes>
+  </stdyDscr>
+  <fileDscr ID="ExtractData">
+    <fileTxt>
+      <fileName>highered_00002.dat</fileName>
+      <fileCont>Microdata records</fileCont>
+      <fileStrc type="rectangular"/>
+      <fileType charset="ISO-8859-1">ISO-8859-1 data file</fileType>
+      <format>fixed length fields</format>
+      <filePlac>IPUMS, 50 Willey Hall, 225 - 19th Avenue South, Minneapolis, MN 55455</filePlac>
+    </fileTxt>
+  </fileDscr>
+  <dataDscr><var ID="PERSONID" dcml="0" files="ExtractData" intrvl="contin" name="PERSONID">
+  <location EndPos="18" StartPos="1" width="18"/>
+  <labl>Individual identification number</labl>
+  <txt><![CDATA[PERSONID is an identification variable constructed by IPUMS using the reference ID variable (REFID) from the public use files.  The original variable identifying individuals uniquely across samples is composed of alpha-numerics, whereas PERSONID used an algorithm to create unique numeric values for each individual.  Each digit was expanded to 2 digits.  Numeric digits were given a leading zero.  For example, the digit 2 would be converted to 02.  Letters would be converted by the ordinal of the letter plus ten.  For example, A would be converted to 11, B to 12, C to 13 and so on.  It is possible to identify individuals in different survey years within the same decade.
+
+IPUMS-SESTAT has set PERSONID as a character string for statistical packages to more easily read in the values.
+
+Users should note that some respondents are interviewed over time, allowing the possibility for longitudinal data analysis.  Please see our User Note on Longitudinal Data.]]></txt>
+  <codInstr><![CDATA[This is a 18-digit numeric variable with 0 implied decimal places]]></codInstr>
+  <concept vocab="IPUMS">Technical Variables -- PERSON</concept>
+  <varFormat schema="other" type="character"/>
+</var>
+<var ID="YEAR" dcml="0" files="ExtractData" intrvl="contin" name="YEAR">
+  <location EndPos="22" StartPos="19" width="4"/>
+  <labl>Survey year</labl>
+  <txt><![CDATA[YEAR gives the year in which the survey was administered.]]></txt>
+  <codInstr><![CDATA[This is a 4-digit numeric variable with 0 implied decimal places]]></codInstr>
+  <concept vocab="IPUMS">Technical Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="SAMPLE" dcml="0" files="ExtractData" intrvl="discrete" name="SAMPLE">
+  <location EndPos="27" StartPos="23" width="5"/>
+  <labl>Sample identifier</labl>
+  <txt><![CDATA[SAMPLE is an IPUMS-design sample identification number to distinguish each SESTAT sample uniquely.  
+
+The sample coding convention is as follows: the left-most digit (or two digits in 4-digit codes) sequentially numbers each iteration of survey waves beginning in 1993, the second from the right digit identifies SESTAT samples with "0", and non-SESTAT (full survey) samples with "1", and the right-most digit corresponds to the survey type, for example, SDR samples have a last digit of 2.]]></txt>
+  <catgry>
+    <catValu>00101</catValu>
+    <labl>SESTAT NSCG 1993</labl>
+  </catgry>
+  <catgry>
+    <catValu>00102</catValu>
+    <labl>SESTAT SDR 1993</labl>
+  </catgry>
+  <catgry>
+    <catValu>00103</catValu>
+    <labl>SESTAT NSRCG 1993</labl>
+  </catgry>
+  <catgry>
+    <catValu>00111</catValu>
+    <labl>NSCG 1993</labl>
+  </catgry>
+  <catgry>
+    <catValu>00201</catValu>
+    <labl>SESTAT NSCG 1995</labl>
+  </catgry>
+  <catgry>
+    <catValu>00202</catValu>
+    <labl>SESTAT SDR 1995</labl>
+  </catgry>
+  <catgry>
+    <catValu>00203</catValu>
+    <labl>SESTAT NSRCG 1995</labl>
+  </catgry>
+  <catgry>
+    <catValu>00301</catValu>
+    <labl>SESTAT NSCG 1997</labl>
+  </catgry>
+  <catgry>
+    <catValu>00302</catValu>
+    <labl>SESTAT SDR 1997</labl>
+  </catgry>
+  <catgry>
+    <catValu>00303</catValu>
+    <labl>SESTAT NSRCG 1997</labl>
+  </catgry>
+  <catgry>
+    <catValu>00401</catValu>
+    <labl>SESTAT NSCG 1999</labl>
+  </catgry>
+  <catgry>
+    <catValu>00402</catValu>
+    <labl>SESTAT SDR 1999</labl>
+  </catgry>
+  <catgry>
+    <catValu>00403</catValu>
+    <labl>SESTAT NSRCG 1999</labl>
+  </catgry>
+  <catgry>
+    <catValu>00512</catValu>
+    <labl>SDR 2001</labl>
+  </catgry>
+  <catgry>
+    <catValu>00513</catValu>
+    <labl>NSRCG 2001</labl>
+  </catgry>
+  <catgry>
+    <catValu>00601</catValu>
+    <labl>SESTAT NSCG 2003</labl>
+  </catgry>
+  <catgry>
+    <catValu>00602</catValu>
+    <labl>SESTAT SDR 2003</labl>
+  </catgry>
+  <catgry>
+    <catValu>00603</catValu>
+    <labl>SESTAT NSRCG 2003</labl>
+  </catgry>
+  <catgry>
+    <catValu>00611</catValu>
+    <labl>NSCG 2003</labl>
+  </catgry>
+  <catgry>
+    <catValu>00612</catValu>
+    <labl>SDR 2003</labl>
+  </catgry>
+  <catgry>
+    <catValu>00613</catValu>
+    <labl>NSRCG 2003</labl>
+  </catgry>
+  <catgry>
+    <catValu>00701</catValu>
+    <labl>SESTAT NSCG 2006</labl>
+  </catgry>
+  <catgry>
+    <catValu>00702</catValu>
+    <labl>SESTAT SDR 2006</labl>
+  </catgry>
+  <catgry>
+    <catValu>00703</catValu>
+    <labl>SESTAT NSRCG 2006</labl>
+  </catgry>
+  <catgry>
+    <catValu>00712</catValu>
+    <labl>SDR 2006</labl>
+  </catgry>
+  <catgry>
+    <catValu>00713</catValu>
+    <labl>NSRCG 2006</labl>
+  </catgry>
+  <catgry>
+    <catValu>00801</catValu>
+    <labl>SESTAT NSCG 2008</labl>
+  </catgry>
+  <catgry>
+    <catValu>00802</catValu>
+    <labl>SESTAT SDR 2008</labl>
+  </catgry>
+  <catgry>
+    <catValu>00803</catValu>
+    <labl>SESTAT NSRCG 2008</labl>
+  </catgry>
+  <catgry>
+    <catValu>00812</catValu>
+    <labl>SDR 2008</labl>
+  </catgry>
+  <catgry>
+    <catValu>00813</catValu>
+    <labl>NSRCG 2008</labl>
+  </catgry>
+  <catgry>
+    <catValu>00901</catValu>
+    <labl>SESTAT NSCG 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>00902</catValu>
+    <labl>SESTAT SDR 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>00903</catValu>
+    <labl>SESTAT NSRCG 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>00911</catValu>
+    <labl>NSCG 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>00912</catValu>
+    <labl>SDR 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>00913</catValu>
+    <labl>NSRCG 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>00914</catValu>
+    <labl>ISDR 2010</labl>
+  </catgry>
+  <catgry>
+    <catValu>01001</catValu>
+    <labl>SESTAT NSCG 2013</labl>
+  </catgry>
+  <catgry>
+    <catValu>01002</catValu>
+    <labl>SESTAT SDR 2013</labl>
+  </catgry>
+  <catgry>
+    <catValu>01012</catValu>
+    <labl>SDR 2013</labl>
+  </catgry>
+  <catgry>
+    <catValu>01014</catValu>
+    <labl>ISDR 2013</labl>
+  </catgry>
+  <concept vocab="IPUMS">Technical Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="SURID" dcml="0" files="ExtractData" intrvl="discrete" name="SURID">
+  <location EndPos="28" StartPos="28" width="1"/>
+  <labl>Survey identifier</labl>
+  <txt><![CDATA[SURID identifies the survey for which the respondent was interviewed in this particular survey year.]]></txt>
+  <catgry>
+    <catValu>1</catValu>
+    <labl>NSCG</labl>
+  </catgry>
+  <catgry>
+    <catValu>2</catValu>
+    <labl>SDR</labl>
+  </catgry>
+  <catgry>
+    <catValu>3</catValu>
+    <labl>NSRCG</labl>
+  </catgry>
+  <catgry>
+    <catValu>4</catValu>
+    <labl>ISDR</labl>
+  </catgry>
+  <concept vocab="IPUMS">Technical Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="GENDER" dcml="0" files="ExtractData" intrvl="discrete" name="GENDER">
+  <location EndPos="30" StartPos="29" width="2"/>
+  <labl>Gender</labl>
+  <txt><![CDATA[GENDER indicates whether the respondent identified as male or female.]]></txt>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>Female</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>Male</labl>
+  </catgry>
+  <concept vocab="IPUMS">Demographic Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="RACETH" dcml="0" files="ExtractData" intrvl="discrete" name="RACETH">
+  <location EndPos="32" StartPos="31" width="2"/>
+  <labl>Race/ethnicity</labl>
+  <txt><![CDATA[RACETH is a recode of the respondent's reported race into public use categories.  The specific categories "Asian" and "White" are kept, and other race categories that have fewer cases are grouped into "Under-represented minorities" or "Other".]]></txt>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>Asian</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>White</labl>
+  </catgry>
+  <catgry>
+    <catValu>03</catValu>
+    <labl>Under-represented minorities</labl>
+  </catgry>
+  <catgry>
+    <catValu>04</catValu>
+    <labl>Other</labl>
+  </catgry>
+  <concept vocab="IPUMS">Demographic Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="BTHUS" dcml="0" files="ExtractData" intrvl="discrete" name="BTHUS">
+  <location EndPos="34" StartPos="33" width="2"/>
+  <labl>Place of birth</labl>
+  <txt><![CDATA[BTHUS reports whether or not the respondent was born in the United States.]]></txt>
+  <catgry>
+    <catValu>00</catValu>
+    <labl>Not in the US</labl>
+  </catgry>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>United States</labl>
+  </catgry>
+  <catgry>
+    <catValu>99</catValu>
+    <labl>Missing</labl>
+  </catgry>
+  <concept vocab="IPUMS">Demographic Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="CTZUSIN" dcml="0" files="ExtractData" intrvl="discrete" name="CTZUSIN">
+  <location EndPos="36" StartPos="35" width="2"/>
+  <labl>U.S. citizenship status, binary</labl>
+  <txt><![CDATA[CTZUSIN is a binary variable that indicates whether or not the respondent is a US citizen or not.  The variable CTZUS gives more detail about whether the respondent is a citizen by birth or by naturalization.]]></txt>
+  <catgry>
+    <catValu>00</catValu>
+    <labl>No</labl>
+  </catgry>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>Yes</labl>
+  </catgry>
+  <concept vocab="IPUMS">Demographic Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="CTZUS" dcml="0" files="ExtractData" intrvl="discrete" name="CTZUS">
+  <location EndPos="38" StartPos="37" width="2"/>
+  <labl>Type of US citizen</labl>
+  <txt><![CDATA[CTZUS reports whether the respondent is a citizen by birth or by naturalization.  A similar variable CTZUSIN is a binary variable that indicates whether or not the respondent is a US citizen or not.]]></txt>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>Born in US or US territories</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>Born abroad of American parents</labl>
+  </catgry>
+  <catgry>
+    <catValu>03</catValu>
+    <labl>By naturalization</labl>
+  </catgry>
+  <catgry>
+    <catValu>98</catValu>
+    <labl>Logical Skip</labl>
+  </catgry>
+  <concept vocab="IPUMS">Demographic Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="CHTOT" dcml="0" files="ExtractData" intrvl="discrete" name="CHTOT">
+  <location EndPos="40" StartPos="39" width="2"/>
+  <labl>Total number of children</labl>
+  <txt><![CDATA[CHTOT is an NSF recode variable describing how many children the respondent lived with as part of his/her family.]]></txt>
+  <catgry>
+    <catValu>00</catValu>
+    <labl>No children</labl>
+  </catgry>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>One child</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>One to three children</labl>
+  </catgry>
+  <catgry>
+    <catValu>03</catValu>
+    <labl>Two or more children</labl>
+  </catgry>
+  <catgry>
+    <catValu>04</catValu>
+    <labl>More than three children</labl>
+  </catgry>
+  <catgry>
+    <catValu>98</catValu>
+    <labl>Logical Skip</labl>
+  </catgry>
+  <concept vocab="IPUMS">Demographic Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="DGRDG" dcml="0" files="ExtractData" intrvl="discrete" name="DGRDG">
+  <location EndPos="41" StartPos="41" width="1"/>
+  <labl>Type of highest certificate or degree</labl>
+  <txt><![CDATA[DGRDG reports the type of the respondent's highest postsecondary degree or certificate.]]></txt>
+  <catgry>
+    <catValu>1</catValu>
+    <labl>Bachelor's</labl>
+  </catgry>
+  <catgry>
+    <catValu>2</catValu>
+    <labl>Master's</labl>
+  </catgry>
+  <catgry>
+    <catValu>3</catValu>
+    <labl>Doctorate</labl>
+  </catgry>
+  <catgry>
+    <catValu>4</catValu>
+    <labl>Professional</labl>
+  </catgry>
+  <concept vocab="IPUMS">Highest Degree Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="NDGMEMG" dcml="0" files="ExtractData" intrvl="discrete" name="NDGMEMG">
+  <location EndPos="43" StartPos="42" width="2"/>
+  <labl>Field of major for highest degree (major group)</labl>
+  <txt><![CDATA[NDGMEMG categorizes the field of major for the respondent's highest degree into seven broad fields. The variable NDGMED provides this information with a finer level of detail.]]></txt>
+  <catgry>
+    <catValu>01</catValu>
+    <labl>Computer and mathematical sciences</labl>
+  </catgry>
+  <catgry>
+    <catValu>02</catValu>
+    <labl>Biological, agricultural and environmental life sciences</labl>
+  </catgry>
+  <catgry>
+    <catValu>03</catValu>
+    <labl>Physical and related sciences</labl>
+  </catgry>
+  <catgry>
+    <catValu>04</catValu>
+    <labl>Social and related sciences</labl>
+  </catgry>
+  <catgry>
+    <catValu>05</catValu>
+    <labl>Engineering</labl>
+  </catgry>
+  <catgry>
+    <catValu>06</catValu>
+    <labl>Science and engineering-related fields</labl>
+  </catgry>
+  <catgry>
+    <catValu>07</catValu>
+    <labl>Non-science and engineering fields</labl>
+  </catgry>
+  <catgry>
+    <catValu>99</catValu>
+    <labl>Missing</labl>
+  </catgry>
+  <concept vocab="IPUMS">Highest Degree Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+<var ID="LFSTAT" dcml="0" files="ExtractData" intrvl="discrete" name="LFSTAT">
+  <location EndPos="44" StartPos="44" width="1"/>
+  <labl>Labor force status</labl>
+  <txt><![CDATA[LFSTAT is the respondent's labor force status.]]></txt>
+  <catgry>
+    <catValu>1</catValu>
+    <labl>Employed</labl>
+  </catgry>
+  <catgry>
+    <catValu>2</catValu>
+    <labl>Unemployed</labl>
+  </catgry>
+  <catgry>
+    <catValu>3</catValu>
+    <labl>Not in the labor force</labl>
+  </catgry>
+  <concept vocab="IPUMS">Employment Variables -- PERSON</concept>
+  <varFormat schema="other" type="numeric"/>
+</var>
+</dataDscr>
+</codeBook>
