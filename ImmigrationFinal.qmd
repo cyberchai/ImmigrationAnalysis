@@ -14,6 +14,7 @@ library(ggplot2)
 library(tidyverse)
 library(tidytuesdayR)
 library(corrplot)
+library(MASS)
 
 ```
 
@@ -33,10 +34,26 @@ ddi <- read_ipums_ddi("highered_00002.xml")
 data <- read_ipums_micro(ddi)
 ```
 
+Wrangling:
+```{r}
+# remove identifier variables
+data <- data |>
+  dplyr::select(-PERSONID, -YEAR, -SAMPLE, -SURID)
+
+# reconstruct the CTZUS variable to be binary.
+# for CTZUS == 3, we will make that 1, and all other categories will be 0
+data$CTZUS <- ifelse(data$CTZUS == 3, 1, ifelse(data$CTZUS == 98, NA, 0))
+
+# remove rows where CTZUS is NA (originally 98)
+data <- data[!is.na(data$CTZUS), ]
+```
+
+
+
 ```{r}
 #delete this
 
-count <- sum(data$CTZUS == 3)
+count <- sum(data$CTZUS == 1)
 print(count)
 
 # print(names(data))
@@ -45,47 +62,51 @@ print(count)
 # look at distribution of majors
 
 # correlation matrix
-numeric_data <- data[, c("YEAR", "GENDER", "RACETH", "BTHUS", "CTZUSIN", "CTZUS", "CHTOT", "DGRDG", "NDGMEMG", "LFSTAT")]
+numeric_data <- data[, c("GENDER", "RACETH", "BTHUS", "CTZUSIN", "CTZUS", "CHTOT", "DGRDG", "NDGMEMG", "LFSTAT")]
 
 # compute matrix
 correlation_matrix <- cor(numeric_data, use = "complete.obs") 
 print(correlation_matrix)
 ```
 
+```{r}
+glm(CTZUS ~ . , data = data, family=binomial) |>
+  step(direction = "backward", trace = 0) |>
+  summary()
+```
+```{r}
+lm(CTZUS ~ . , data = data) |>
+  step(direction = "backward", trace = 0) |>
+  summary()
+```
+
+```{r}
+
+```
+
 
 ### Data wrangling:
 
-
-
 ```{r}
 
 ```
 
-
 ```{r}
 
 ```
-
 
 ## RESULTS
 
 ### HYPOTHESIS
 
-
 ## DISCUSSION
 
-
-### LIMITATIONS 
-
-
+### LIMITATIONS
 
 ### FUTURE DIRECTION
 
-
-
 ## Data Appendix
-
 
 #### IPUMS Citation
 
-. Minnesota Population Center. IPUMS Higher Ed: Version 1.0 [ImmigrationData]. Minneapolis, MN: University of Minnesota, 2016. https://doi.org/10.18128/D100.V1.0
+. Minnesota Population Center. IPUMS Higher Ed: Version 1.0 \[ImmigrationData\]. Minneapolis, MN: University of Minnesota, 2016. https://doi.org/10.18128/D100.V1.0
