@@ -28,9 +28,18 @@ library(tidytuesdayR)
 
 if (!require("ipumsr")) stop("Reading IPUMS data into R requires the ipumsr package. It can be installed using the following command: install.packages('ipumsr')")
 
-ddi <- read_ipums_ddi("highered_00001.xml")
+ddi <- read_ipums_ddi("highered_00002.xml")
 data <- read_ipums_micro(ddi)
 ```
+
+```{r}
+#delete this
+
+count <- sum(data$CTZUS == 3)
+print(count)
+
+```
+
 
 ### Data wrangling:
 
