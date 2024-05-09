@@ -71,6 +71,12 @@ summary(simpleModel)
 vif(simpleModel)
 ```
 
+$$
+\text{{CTZUS}} = -1.68659 + 0.12190 \text{{DGRDG}} - 0.01057 \text{{LFSTAT}} + 0.02518 \text{{CHTOT}})
+$$
+
+
+
 ```{r}
 # make our model
 
@@ -79,7 +85,9 @@ summary(complexModel)
 vif(complexModel)
 ```
 
-
+$$
+\text{{CTZUS}} = 1.68648 - 0.10993 \text{{DGRDG}} - 0.03052 \text{{LFSTAT}} -0.04997 \text{{CHTOT}} -1.57997 \text{{RACETH}} \\ -0.17444 \text{{GENDER}} + 0.05233 (\text{{DGRDG}} \times \text{{RACETH}}) - 0.05959 (\text{{LFSTAT}} \times \text{{RACETH}}) + \\ 0.01390 (\text{{CHTOT}} \times \text{{RACETH}}) + 0.05523 (\text{{DGRDG}} \times \text{{GENDER}}) + \\ 0.10552 (\text{{LFSTAT}} \times \text{{GENDER}}) + 0.03051 (\text{{CHTOT}} \times \text{{GENDER}})
+$$
 
 
 
