@@ -13,6 +13,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyverse)
 library(tidytuesdayR)
+library(corrplot)
 
 ```
 
@@ -38,6 +39,17 @@ data <- read_ipums_micro(ddi)
 count <- sum(data$CTZUS == 3)
 print(count)
 
+# print(names(data))
+# sapply(data, class)
+
+# look at distribution of majors
+
+# correlation matrix
+numeric_data <- data[, c("YEAR", "GENDER", "RACETH", "BTHUS", "CTZUSIN", "CTZUS", "CHTOT", "DGRDG", "NDGMEMG", "LFSTAT")]
+
+# compute matrix
+correlation_matrix <- cor(numeric_data, use = "complete.obs") 
+print(correlation_matrix)
 ```
 
 
