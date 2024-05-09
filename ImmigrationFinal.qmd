@@ -15,6 +15,8 @@ library(tidyverse)
 library(tidytuesdayR)
 library(corrplot)
 library(MASS)
+library(car)
+# library(equatiomatic)
 
 ```
 
@@ -38,15 +40,96 @@ Wrangling:
 ```{r}
 # remove identifier variables
 data <- data |>
-  dplyr::select(-PERSONID, -YEAR, -SAMPLE, -SURID)
+  dplyr::select(-PERSONID, -YEAR, -SAMPLE, -SURID, -BTHUS, -NDGMEMG, -CTZUSIN)
+```
 
+```{r}
 # reconstruct the CTZUS variable to be binary.
 # for CTZUS == 3, we will make that 1, and all other categories will be 0
 data$CTZUS <- ifelse(data$CTZUS == 3, 1, ifelse(data$CTZUS == 98, NA, 0))
 
-# remove rows where CTZUS is NA (originally 98)
-data <- data[!is.na(data$CTZUS), ]
+data$CHTOT[data$CHTOT == 98] <- NA
+
+dim(data)
 ```
+
+
+```{r}
+# remove NA values
+data = data |>
+  dplyr::filter(!is.na(CTZUS))
+
+dim(data)
+```
+
+
+```{r}
+# make our model
+
+simpleModel = glm(CTZUS ~ DGRDG + LFSTAT + CHTOT, data = data, family = binomial)
+summary(simpleModel)
+vif(simpleModel)
+```
+
+```{r}
+# make our model
+
+complexModel = glm(CTZUS ~ (DGRDG + LFSTAT + CHTOT) * (RACETH + GENDER), data = data, family = binomial)
+summary(complexModel)
+vif(complexModel)
+```
+
+
+
+
+
+
+
+
+```{r}
+# make all variables characters from ints
+data[] <- lapply(data, as.character)
+data$CTZUS <- as.numeric(data$CTZUS)
+```
+
+```{r}
+# MODEL SELECTION
+
+empty_model <- glm(
+  CTZUS ~ 1,
+  data = data,
+  family = binomial
+)
+
+head(data)
+```
+
+```{r}
+
+full_model <- glm(
+  CTZUS ~ GENDER + RACETH + CHTOT + DGRDG + NDGMEMG + LFSTAT,
+  data = data,
+  family=binomial
+)
+
+```
+
+```{r}
+stepAIC(
+  object = empty_model,
+  scope = list(lower = empty_model, upper = full_model),
+  direction = "forward",
+  test = "F",
+  k = 2*qchisq(.95, df = 1)
+)
+```
+
+
+
+
+
+
+
 
 
 
@@ -74,6 +157,7 @@ glm(CTZUS ~ . , data = data, family=binomial) |>
   step(direction = "backward", trace = 0) |>
   summary()
 ```
+
 ```{r}
 lm(CTZUS ~ . , data = data) |>
   step(direction = "backward", trace = 0) |>
@@ -83,7 +167,6 @@ lm(CTZUS ~ . , data = data) |>
 ```{r}
 
 ```
-
 
 ### Data wrangling:
 
