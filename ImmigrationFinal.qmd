@@ -91,9 +91,6 @@ $$
 
 
 
-
-
-
 ```{r}
 # make all variables characters from ints
 data[] <- lapply(data, as.character)
