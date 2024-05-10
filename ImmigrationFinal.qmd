@@ -17,6 +17,8 @@ library(corrplot)
 library(MASS)
 library(car)
 # library(equatiomatic)
+library(performance)
+library(see)
 
 ```
 
@@ -183,41 +185,14 @@ dim(data)
 $$
 \log\left(\frac{p}{1 - p}\right) = 0.76524 - 3.71494 \cdot \text{RACETH2} - 2.38423 \cdot \text{RACETH3} + 0.33245 \cdot \text{GENDER2} + \\ 0.24602 \cdot \text{DGRDG2} + 0.30555 \cdot \text{DGRDG3} - 0.10952 \cdot \text{DGRDG4} + 0.48005 \cdot \text{LFSTAT2} - 0.08273 \cdot \text{LFSTAT3}
 $$
-
 ```{r}
-#delete this
+# this goes in Methods section
+# assumptions
 
-count <- sum(data$CTZUS == 1)
-print(count)
+check_model(bestModel, check = 'all')
 
-# print(names(data))
-# sapply(data, class)
-
-# look at distribution of majors
-
-# correlation matrix
-numeric_data <- data[, c("GENDER", "RACETH", "BTHUS", "CTZUSIN", "CTZUS", "CHTOT", "DGRDG", "NDGMEMG", "LFSTAT")]
-
-# compute matrix
-correlation_matrix <- cor(numeric_data, use = "complete.obs") 
-print(correlation_matrix)
 ```
 
-```{r}
-glm(CTZUS ~ . , data = data, family=binomial) |>
-  step(direction = "backward", trace = 0) |>
-  summary()
-```
-
-```{r}
-lm(CTZUS ~ . , data = data) |>
-  step(direction = "backward", trace = 0) |>
-  summary()
-```
-
-```{r}
-
-```
 
 ### Data wrangling:
 
