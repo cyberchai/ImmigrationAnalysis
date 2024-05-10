@@ -89,6 +89,9 @@ $$
 \text{{CTZUS}} = 1.68648 - 0.10993 \text{{DGRDG}} - 0.03052 \text{{LFSTAT}} -0.04997 \text{{CHTOT}} -1.57997 \text{{RACETH}} \\ -0.17444 \text{{GENDER}} + 0.05233 (\text{{DGRDG}} \times \text{{RACETH}}) - 0.05959 (\text{{LFSTAT}} \times \text{{RACETH}}) + \\ 0.01390 (\text{{CHTOT}} \times \text{{RACETH}}) + 0.05523 (\text{{DGRDG}} \times \text{{GENDER}}) + \\ 0.10552 (\text{{LFSTAT}} \times \text{{GENDER}}) + 0.03051 (\text{{CHTOT}} \times \text{{GENDER}})
 $$
 
+We find that 
+
+
 
 
 ```{r}
@@ -97,26 +100,40 @@ data[] <- lapply(data, as.character)
 data$CTZUS <- as.numeric(data$CTZUS)
 ```
 
+
+```{r}
+data |>
+  dplyr::select(CHTOT) |>
+  filter(CHTOT == 2)
+```
+
+
+```{r}
+variableSelectionData = data |>
+  filter(!is.na(CHTOT))
+```
+
 ```{r}
 # MODEL SELECTION
 
 empty_model <- glm(
   CTZUS ~ 1,
-  data = data,
+  data = variableSelectionData,
   family = binomial
 )
 
-head(data)
+summary(empty_model)
 ```
 
 ```{r}
 
 full_model <- glm(
-  CTZUS ~ GENDER + RACETH + CHTOT + DGRDG + NDGMEMG + LFSTAT,
-  data = data,
+  CTZUS ~ GENDER + RACETH + CHTOT + DGRDG + LFSTAT,
+  data = variableSelectionData,
   family=binomial
 )
 
+summary(full_model)
 ```
 
 ```{r}
@@ -130,13 +147,42 @@ stepAIC(
 ```
 
 
+```{r}
+stepAIC(
+  full_model,
+  scope = list(lower = empty_model, upper = full_model),
+  direction = "backward",
+  test = "F",
+  k = 2*qchisq(.95, df = 1)
+)
+```
 
 
+```{r}
+stepAIC(
+  object = empty_model,
+  scope = list(lower = empty_model, upper = full_model),
+  direction = "both",
+  test = "F",
+  k = 2*qchisq(.95, df = 1)
+)
+```
+
+```{r}
+bestModel = glm(formula = CTZUS ~ RACETH + GENDER + DGRDG + LFSTAT, family = binomial, 
+    data = variableSelectionData)
+
+summary(bestModel)
+vif(bestModel)
 
 
+dim(data)
+```
 
 
-
+$$
+\log\left(\frac{p}{1 - p}\right) = 0.76524 - 3.71494 \cdot \text{RACETH2} - 2.38423 \cdot \text{RACETH3} + 0.33245 \cdot \text{GENDER2} + \\ 0.24602 \cdot \text{DGRDG2} + 0.30555 \cdot \text{DGRDG3} - 0.10952 \cdot \text{DGRDG4} + 0.48005 \cdot \text{LFSTAT2} - 0.08273 \cdot \text{LFSTAT3}
+$$
 
 ```{r}
 #delete this
@@ -174,14 +220,6 @@ lm(CTZUS ~ . , data = data) |>
 ```
 
 ### Data wrangling:
-
-```{r}
-
-```
-
-```{r}
-
-```
 
 ## RESULTS
 
