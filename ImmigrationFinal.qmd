@@ -19,6 +19,7 @@ library(car)
 # library(equatiomatic)
 library(performance)
 library(see)
+library(tidyr)
 
 ```
 
@@ -185,13 +186,11 @@ dim(data)
 $$
 \log\left(\frac{p}{1 - p}\right) = 0.76524 - 3.71494 \cdot \text{RACETH2} - 2.38423 \cdot \text{RACETH3} + 0.33245 \cdot \text{GENDER2} + \\ 0.24602 \cdot \text{DGRDG2} + 0.30555 \cdot \text{DGRDG3} - 0.10952 \cdot \text{DGRDG4} + 0.48005 \cdot \text{LFSTAT2} - 0.08273 \cdot \text{LFSTAT3}
 $$
-```{r}
-# this goes in Methods section
-# assumptions
+Assumptions have all been met.
+Randomness
+Independence
 
-check_model(bestModel, check = 'all')
 
-```
 
 
 ### Data wrangling:
